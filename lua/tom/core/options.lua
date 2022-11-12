@@ -33,8 +33,6 @@ opt.splitright = true -- bool: Place new window to right of current one
 opt.splitbelow = true -- bool: Place new window below the current one
 
 -- Unsorted
-opt.cileencoding = "utf-8" -- the encoding written to a file
-opt.clsearch = true -- highlight all matches on previous search pattern
 opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 opt.conceallevel = 0 -- so that `` is visible in markdown files
@@ -44,15 +42,15 @@ opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 opt.laststatus = 3
 opt.mouse = "a" -- allow the mouse to be used in neovim
 opt.numberwidth = 4 -- set number column width to 2 {default 4}
-opt.opt.title = true
+opt.title = true
 opt.pumheight = 10 -- pop up menu height
 opt.ruler = false
-opt.sackup = false -- creates a backup file
+opt.backup = false -- creates a backup file
 opt.showcmd = false
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.showtabline = 0 -- always show tabs
 opt.sidescrolloff = 8
-opt.slipboard = "unnamedplus" -- allows neovim to access the system clipboard
+opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 opt.smartindent = true -- make indenting smarter again
 opt.swapfile = false -- creates a swapfile
 opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
