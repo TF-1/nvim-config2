@@ -1,41 +1,62 @@
-local opt = vim.opt -- for conciseness
+--[[ opts.lua ]]
+local opt = vim.opt
 
--- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+-- [[ Context ]]
+opt.colorcolumn = "80" -- str:  Show col for max line length
+opt.number = true -- bool: Show line numbers
+opt.relativenumber = true -- bool: Show relative line numbers
+opt.scrolloff = 4 -- int:  Min num lines of context
+opt.signcolumn = "yes" -- str:  Show the sign column
 
--- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
+-- [[ Filetypes ]]
+opt.encoding = "utf8" -- str:  String encoding to use
+opt.fileencoding = "utf8" -- str:  File encoding to use
 
--- line wrapping
-opt.wrap = false -- disable line wrapping
+-- [[ Theme ]]
+opt.syntax = "ON" -- str:  Allow syntax highlighting
+opt.termguicolors = true -- bool: If term supports ui color then enable
 
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+-- [[ Search ]]
+opt.hlsearch = false -- bool: Highlight search matches
+opt.ignorecase = true -- bool: Ignore case in search patterns
+opt.incsearch = true -- bool: Use incremental search
+opt.smartcase = true -- bool: Override ignorecase if search contains capitals
 
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
+-- [[ Whitespace ]]
+opt.expandtab = true -- bool: Use spaces instead of tabs
+opt.shiftwidth = 4 -- num:  Size of an indent
+opt.softtabstop = 4 -- num:  Number of spaces tabs count for in insert mode
+opt.tabstop = 4 -- num:  Number of spaces tabs count for
 
--- appearance
+-- [[ Splits ]]
+opt.splitright = true -- bool: Place new window to right of current one
+opt.splitbelow = true -- bool: Place new window below the current one
 
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-
--- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
-
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
-
-opt.iskeyword:append("-") -- consider string-string as whole word
+-- Unsorted
+opt.cileencoding = "utf-8" -- the encoding written to a file
+opt.clsearch = true -- highlight all matches on previous search pattern
+opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+opt.conceallevel = 0 -- so that `` is visible in markdown files
+opt.cursorline = true -- highlight the current line
+opt.expandtab = true -- convert tabs to spaces
+opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+opt.laststatus = 3
+opt.mouse = "a" -- allow the mouse to be used in neovim
+opt.numberwidth = 4 -- set number column width to 2 {default 4}
+opt.opt.title = true
+opt.pumheight = 10 -- pop up menu height
+opt.ruler = false
+opt.sackup = false -- creates a backup file
+opt.showcmd = false
+opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+opt.showtabline = 0 -- always show tabs
+opt.sidescrolloff = 8
+opt.slipboard = "unnamedplus" -- allows neovim to access the system clipboard
+opt.smartindent = true -- make indenting smarter again
+opt.swapfile = false -- creates a swapfile
+opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
+opt.undofile = true -- enable persistent undo
+opt.updatetime = 100 -- faster completion (4000ms default)
+opt.wrap = false -- display lines as one long line
+opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
