@@ -39,7 +39,16 @@ return packer.startup(function(use)
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
+  -- WhichKey
+  use("folke/which-key.nvim")
+  --  use({
+  --    "folke/which-key.nvim",
+  --    config = function()
+  --      require("which-key").setup()
+  --    end,
+  --  })
   -- essential plugins
+
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
   use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
