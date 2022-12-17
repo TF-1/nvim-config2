@@ -1,6 +1,6 @@
 -- set leader key to space
 vim.g.mapleader = " "
-
+local default_opts = { noremap = true, silent = true }
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
@@ -15,8 +15,12 @@ keymap.set("n", "<TAB>", ":bn<CR>") -- next buffer
 keymap.set("n", "<S-TAB>", ":bp<CR>") -- previous buffer
 keymap.set("n", "<leader>bc", ":bd<CR>") -- previous buffer
 
+-- Searching
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+-- Center search results
+keymap.set("n", "n", "nzz", default_opts)
+keymap.set("n", "N", "Nzz", default_opts)
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
