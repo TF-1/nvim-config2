@@ -42,6 +42,15 @@ local mappings = {
     s = { "<cmd>Telescope live_grep<cr>", "Find Text" }, -- find string in current working directory as you type
     S = { "<cmd>Telescope grep_string<cr>", "Find String" }, -- find string under cursor in current working directory
   },
+
+  z = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    S = { "<cmd>PackerStatus<cr>", "Status" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
 }
 
 wk.setup(setup)
