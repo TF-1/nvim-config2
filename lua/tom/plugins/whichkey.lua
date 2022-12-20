@@ -27,21 +27,21 @@ local mappings = {
   ["W"] = { "<cmd>wall<CR>", "Save all" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
 
-  f = {
-    name = "Find",
-    b = { "<cmd>Telescope buffers<cr>", "Find Buffer" }, -- find string under cursor in current working directory
-    c = { "<cmd>Telescope command_history<cr>", "Command History" }, -- find string under cursor in current working directory
-    C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
-    f = { "<cmd>Telescope find_files<cr>", "Find files" }, -- find files within current working directory, respects .gitignore
-    F = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    h = { "<cmd>Telescope search_history<cr>", "Search History" },
-    H = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags   l = { "<cmd>Telescope resume<cr>", "Last Search" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope registers<cr>", "Registers" },
-    s = { "<cmd>Telescope live_grep<cr>", "Find Text" }, -- find string in current working directory as you type
-    S = { "<cmd>Telescope grep_string<cr>", "Find String" }, -- find string under cursor in current working directory
-  },
+  --  f = {
+  --      name = "Find",
+  --      b = { "<cmd>Telescope buffers<cr>", "Find Buffer" }, -- find string under cursor in current working directory
+  --      c = { "<cmd>Telescope command_history<cr>", "Command History" }, -- find string under cursor in current working directory
+  --      C = { "<cmd>Telescope commands<cr>", "Vim Commands" },
+  --      f = { "<cmd>Telescope find_files<cr>", "Find files" }, -- find files within current working directory, respects .gitignore
+  --      F = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+  --      h = { "<cmd>Telescope search_history<cr>", "Search History" },
+  --      H = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags   l = { "<cmd>Telescope resume<cr>", "Last Search" },
+  --      k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+  --      M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+  --      r = { "<cmd>Telescope registers<cr>", "Registers" },
+  --      s = { "<cmd>Telescope live_grep<cr>", "Find Text" }, -- find string in current working directory as you type
+  --      S = { "<cmd>Telescope grep_string<cr>", "Find String" }, -- find string under cursor in current working directory
+  --   },
 
   z = {
     name = "Packer",

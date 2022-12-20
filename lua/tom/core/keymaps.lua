@@ -11,9 +11,9 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
 
 -- Buffer navigation
-keymap.set("n", "<TAB>", ":bn<CR>") -- next buffer
-keymap.set("n", "<S-TAB>", ":bp<CR>") -- previous buffer
-keymap.set("n", "<leader>bc", ":bd<CR>") -- previous buffer
+keymap.set("n", "<TAB>", ":bn<CR>", { desc = "Buffer Next" }) -- next buffer
+keymap.set("n", "<S-TAB>", ":bp<CR>", { desc = "Buffer Prev" }) -- previous buffer
+keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Buffer Close" }) -- previous buffer
 
 -- Searching
 -- clear search highlights
@@ -36,7 +36,7 @@ keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & heig
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
+keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
@@ -52,12 +52,28 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- open file explorer and locate file
 
 -- telescope
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fc", "<cmd>Telescope command_history<cr>") -- find string in command history
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fF", "<cmd>Telescope oldfiles<cr>") -- find recent file
-keymap.set("n", "<leader>fS", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+keymap.set("n", "<leader><leader>", require("telescope.builtin").buffers, { desc = "[F]ind [B]uffers" })
+keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "[F]ind [B]uffers" })
+keymap.set("n", "<leader>fc", require("telescope.builtin").command_history, { desc = "[F]ind [C]ommand in history" })
+keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
+keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "[F]ind current [W]ord" })
+keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "[F]ind by [G]rep in current dir" })
+keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "[F]ind [R]ecently opened files" })
+keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "[F]ind [D]iagnostics" })
+keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp" })
+keymap.set("n", "<leader>fk", require("telescope.builtin").keymaps, { desc = "[F]ind [K]eymaping" })
+
+keymap.set("n", "<leader>f/", require("telescope.builtin").search_history, { desc = "[F]ind [/]search history" })
+keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp" })
+keymap.set("n", "<leader>f@", require("telescope.builtin").registers, { desc = "[F]ind [@]register" })
+
+keymap.set("n", "<leader>/", function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    winblend = 10,
+    previewer = false,
+  }))
+end, { desc = "[/] Fuzzily search in current buffer]" })
 
 -- telescope git commands
 keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
